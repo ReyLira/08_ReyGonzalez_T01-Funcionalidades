@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" 
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                template="./Plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml">
+    <ui:define name="content">
+        <h:head>
+            <title>ManyCheckBox</title>
+            <link href="../resources/css/input.css" rel="stylesheet" type="text/css"/>
+        </h:head>
+        <style>
+            .grid-checkbox td {
+                padding: .5rem;
+            }
+        </style>
+
+        <h:body>
+            <div class="card">
+                
+                <h:form>
+                    <p:growl>
+                        <p:autoUpdate />
+                    </p:growl>
+
+                    <h2 style="margin-top:0px">Diseño básico</h2>
+                    <p:selectManyCheckbox id="basic" value="#{checkboxView.selectedOptions}">
+                        <f:selectItem itemLabel="Combo de Americano" itemValue="Pizza Americana, Gaseosa de 1lt y  Añadidos "/>
+                        <f:selectItem itemLabel="Combo Italiano" itemValue="Pizza Italiana, Gaseosa de 1 1/2lt y  Añadidos "/>
+                        <f:selectItem itemLabel="MegaCombo" itemValue="3 Pizzas familiares , Gaseosa de 3lt y Añadidos"/>
+                    </p:selectManyCheckbox>
+
+                    <h2>Diseño de cuadrícula</h2>
+                    <p:selectManyCheckbox id="grid" value="#{checkboxView.selectedCities}" layout="grid" columns="3">
+                        <f:selectItems value="#{checkboxView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}"/>
+                    </p:selectManyCheckbox>
+
+                    <h2>Responsivo</h2>
+                    <p:selectManyCheckbox id="grid2" value="#{checkboxView.selectedCities2}" layout="responsive"
+                                          columns="3">
+                        <f:selectItems value="#{checkboxView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}"/>
+                    </p:selectManyCheckbox>
+
+
+                    <h2>Grupos</h2>
+                    <p:selectManyCheckbox id="grid3" value="#{checkboxView.selectedCountries}" layout="pageDirection"
+                                          columns="1" styleClass="grid-checkbox">
+                        <f:selectItems value="#{checkboxView.countries}" var="country" itemLabel="#{country}"
+                                       itemValue="#{country}"/>
+                    </p:selectManyCheckbox>
+
+                    <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()" icon="pi pi-check" />
+
+                    <p:dialog header="Values"  modal="true" showEffect="clip" widgetVar="dlg" resizable="false">
+                        <p:outputPanel id="display">
+                            <p:dataList value="#{checkboxView.selectedOptions}" var="basic">
+                                <f:facet name="header">
+                                    Basic
+                                </f:facet>
+                                #{basic}
+                            </p:dataList>
+                            <p:dataList value="#{checkboxView.selectedCities2}" var="grid">
+                                <f:facet name="header">
+                                    Grid
+                                </f:facet>
+                                #{grid}
+                            </p:dataList>
+                            <p:dataList value="#{checkboxView.selectedCities}" var="console">
+                                <f:facet name="header">
+                                    Custom
+                                </f:facet>
+                                #{console}
+                            </p:dataList>
+                            <p:dataList value="#{checkboxView.selectedCountries}" var="group">
+                                <f:facet name="header">
+                                    Grupo de Países
+                                </f:facet>
+                                #{group}
+                            </p:dataList>
+                        </p:outputPanel>
+                    </p:dialog>
+                </h:form>
+            </div>
+        </h:body>
+    </ui:define>
+</ui:composition>

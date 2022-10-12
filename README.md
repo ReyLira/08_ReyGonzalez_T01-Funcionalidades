@@ -1,2 +1,2 @@
-# 08_ReyGonzalez_T01-Funcionalidades
-*Input: SelectManyCheckbox, MultiSelectListbox, InputMask*
+# AS211S3_T05_DELIGHTCAKE
+SISTEMA PARA LA GESTIÓN DE LAS VENTAS EN UNA PASTELERÍA (Jhanpool CUPE | Rey GONZALEZ)

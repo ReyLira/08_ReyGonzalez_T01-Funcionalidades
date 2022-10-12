@@ -1,0 +1,16 @@
+properties\NewClass.class
+services\ReporteS.class
+validator\DniVV.class
+converter\RolCV.class
+validator\DniV.class
+validator\CelularVV.class
+dao\Conexion.class
+dao\ICRUD.class
+controller\ClienteC.class
+model\Cliente.class
+validator\CelularV.class
+converter\FechaCV.class
+dao\ClienteImpl.class
+services\ReniecS.class
+validator\EmailV.class
+validator\EmailVV.class

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+.card {
+    font-family: 'Abel', sans-serif;
+    margin: 3%;
+    box-sizing: border-box;
+}
+.card2{
+    font-family: 'Abel', sans-serif;
+    margin: 3%;
+    box-sizing: border-box;
+    background-color: #ff6666;
+}
